@@ -23,8 +23,8 @@
       - Categorical 은 각 category 값의 유무가 하나의 feature 와 대응된다.
 
     - Example
- ```[1,5,8,2,...,49d68486] -> [1,2,2,2,...,0,0,0,1,0,0,0,0,...,0]```
- [1,5,8,2] 는 각각 [1,2,2,2] 에 대응되고, [49d68486] 는 [0,0,0,1,0,0,0,0,...,0] 에 대응
+ - ```[1,5,8,2,...,49d68486] -> [1,2,2,2,...,0,0,0,1,0,0,0,0,...,0]```
+   - [1,5,8,2] 는 각각 [1,2,2,2] 에 대응되고, [49d68486] 는 [0,0,0,1,0,0,0,0,...,0] 에 대응
 
 - Compressed Sparse Matrix
   - Categorical 변수의 변환 방식 때문에 matrix 는 sparse 한 속성을 가지고 있음
@@ -34,10 +34,10 @@
 - Partitioning
   - 로컬 컴퓨터 메모리 bound 로 인해  partitioning 을 통해 학습 진행
   - 10만 라인 씩 나누어 총 459개의 파일로 분할
-  - 1~300 파일 은 train set, 301~459 파일은 test set
+  - 1 - 300 파일 은 train set, 301 - 459 파일은 test set
 
 
-## FactorizationMachine
+# FactorizationMachine
 
 ## Train
 - 각 파티셔닝 테이블을 기준으로 디렉토리 내에 iterating 학습
@@ -65,7 +65,7 @@
 
 - predict_result
   - Format
-   - [<Line Number>,<Predicted Label>,<Predicted Probability>]
+   - [Line Number,Predicted Label,Predicted Probability]
 
 - update_params.pkl
   - trained numpy array [w0, v, w]
